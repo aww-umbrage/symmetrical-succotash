@@ -1,0 +1,10 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build -t aww-umbrage/symmetrical-succotash -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true aww-umbrage/symmetrical-succotash npm run test
