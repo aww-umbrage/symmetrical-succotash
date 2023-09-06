@@ -13,6 +13,6 @@ RUN npm run build
 # /app/build most important folder
 
 FROM nginx
-
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
